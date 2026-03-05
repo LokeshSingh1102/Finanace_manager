@@ -1,0 +1,40 @@
+@import "tailwindcss";
+.header-div{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #767b7b;
+    padding: 10px;
+}
+.services{
+    display: flex;
+    width: 70%;
+}
+.childService{
+    margin: 10px;
+    /* width: fit-content; */
+    /* margin-bottom: 0; */
+}
+.childService a{
+    color: black;
+    text-decoration: none;
+}
+.childService ul{
+    background: #b7bbbb;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    text-decoration: none;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    margin-top: 0;
+}
+ul li{
+    padding: 3px;
+}
+.childService:hover>ul,
+.childService:focus-within ul{
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0s;
+}
