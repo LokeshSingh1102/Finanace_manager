@@ -19,9 +19,9 @@ function Signup() {
         }
     }
     return (
-        <div className='h-screen w-screen bg-black flex justify-center items-center' >
-            <div className='h-64 w-68 bg-white relative'>
-                <div className='h-8/10'>
+        <div className='h-screen w-screen bg-black flex justify-center items-center bg-blue-100' >
+            <div className='h-64 w-68 bg-blue-200 rounded-sm relative'>
+                <div className='h-8/10 '>
 
                     <div className='m-2'>
                         <label htmlFor="username">Username:</label>

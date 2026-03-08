@@ -1,10 +1,13 @@
+import { Link } from "react-router"
 
 function Header() {
     return (
         <div className='flex justify-between' >
             <div className='flex justify-center'>
                 <div className='flex justify-center flex-2 items-center'>
-                    <div className='logo cursor-pointer'>FinMan</div>
+                    <Link to={'/'} >
+                        <div className='logo cursor-pointer'>FinMan</div>
+                    </Link>
                 </div>
                 <div className='flex-none services flex justify-center items-center'>
                     <div className='childService m-auto'>
@@ -34,11 +37,11 @@ function Header() {
             </div>
             <div className="mr-2">
                 <div className='childService' >
-                    <a className="ml-36" href="">
+                    <p className="ml-36 cursor-pointer" >
                         profile
-                    </a>
+                    </p>
                     <ul className='z-1 w-48 ml-4 bg-slate-400 mr-2'>
-                        <li><a href="/setting">Go to Profile Page</a></li>
+                        <li><Link to={"/setting"}> <p>Go to Profile Page</p></Link></li>
                         <li><a href="/Signup">Logout</a></li>
 
                     </ul>
