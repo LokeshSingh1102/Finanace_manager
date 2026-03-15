@@ -4,7 +4,7 @@ import { withAccelerate } from '@prisma/extension-accelerate'
 
 export const getPrisma = (database_url: string) => {
   const prisma = new PrismaClient({
-    adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
+    adapter: new PrismaPg({ connectionString: database_url })
   }).$extends(withAccelerate())
   return prisma
 }

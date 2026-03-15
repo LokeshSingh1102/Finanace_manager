@@ -42,7 +42,7 @@ function Header() {
                     </p>
                     <ul className='z-1 w-48 ml-4 bg-slate-400 mr-2'>
                         <li><Link to={"/setting"}> <p>Go to Profile Page</p></Link></li>
-                        <li><a href="/Signup">Logout</a></li>
+                        <li><Link to={"/signin"}> <p>Logout</p></Link></li>
 
                     </ul>
                 </div>

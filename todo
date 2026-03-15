@@ -2,3 +2,6 @@ what feature to add in the application
 
 1> analysis 
 2> imporve payment and add expenses 
+
+fixes needed 
+1> it is hitting the backend even if there is no new expenses added in the backend get the expense details 

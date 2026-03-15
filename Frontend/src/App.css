@@ -1,4 +1,8 @@
 @import "tailwindcss";
+body::-webkit-scrollbar{
+    display: none;
+}
+
 .header-div{
     display: flex;
     justify-content:space-around;
@@ -12,8 +16,6 @@
 }
 .childService{
     margin: 10px;
-    /* width: fit-content; */
-    /* margin-bottom: 0; */
 }
 .childService a{
     color: black;

@@ -1,16 +1,14 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 
-function Signup() {
-    const [name, setName] = useState("")
+function Signin() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     // const u = "lokeshsingh9163@gmail.com"
     // const p = "12345678"
     const handleSubmit = async () => {
         try {
-            const res = await axios.post('http://127.0.0.1:8787/signup', {
-                name: name,
+            const res = await axios.post('http://127.0.0.1:8787/signin', {
                 username: username,
                 password: password
             },
@@ -19,14 +17,13 @@ function Signup() {
                 }
             )
             console.log(res.data);
-            localStorage.setItem('token',res.data)
-            window.location.href='/'
-            
+            localStorage.setItem('token',res.data.token)
+            window.location.href = '/'
         } catch (error) {
-            console.log(error);            
+            console.log(error);
             alert("username or password is incorrect")
         }
-        
+
     }
     const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
@@ -38,12 +35,6 @@ function Signup() {
             <div className='h-64 w-68 bg-blue-200 rounded-sm relative'>
                 <div className='h-8/10 '>
 
-                    <div className='m-2'>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id='name' className='absolute right-1 border-2 rounded-sm border-black ' onKeyDown={(e) => handleKey(e)} onChange={(e) => {
-                            setName(e.target.value)
-                        }} />
-                    </div>
                     <div className='m-2'>
                         <label htmlFor="username">Username:</label>
                         <input type="text" id='username' className='absolute right-1 border-2 rounded-sm border-black ' onKeyDown={(e) => handleKey(e)} onChange={(e) => {
@@ -65,8 +56,7 @@ function Signup() {
                 </div>
             </div>
 
-        </div>
-    )
+        </div>)
 }
 
-export default Signup
+export default Signin
