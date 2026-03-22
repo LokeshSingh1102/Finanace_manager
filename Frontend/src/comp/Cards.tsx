@@ -22,18 +22,18 @@ let Cards: React.FC<IPROPS> = ({ CardId }) => {
 
     useEffect(()=>{
         fetchdata()
-        console.log(history);
+        // console.log(history);
         
     },[])
     const fetchdata = async()=>{
-            try {
-                const res = await axios.get(`http://127.0.0.1:8787/allexpense/:${CardId}`,{
+            try {                
+                const res = await axios.get(`http://127.0.0.1:8787/expense/allexpense/:${CardId}`,{
                     headers:{
                         'Authorization':localStorage.getItem('token')
                     }
                 })
                 setHistory(res.data.data)
-                console.log("history",history);
+                // console.log("history",history);
                 
             } catch (error) {    
                 console.log(error);
@@ -41,7 +41,7 @@ let Cards: React.FC<IPROPS> = ({ CardId }) => {
         }
     const submitDetails = async () => {
         try {
-            const res = await axios.post(`http://127.0.0.1:8787/store/:${CardId}`, {
+            const res = await axios.post(`http://127.0.0.1:8787/expense/store/:${CardId}`, {
                 payment_to: currName,
                 amount: amt
             }, {

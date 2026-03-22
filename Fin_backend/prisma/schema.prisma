@@ -13,20 +13,39 @@ model User {
   username String    @unique
   password String
   expense  Expense[]
+  savings  Saving[]
 }
 
 model Expense {
-  id         Int    @id @default(autoincrement())
-  category   String
-  payment_to String @unique
-  amount     Int
-  userId     String
-  user       User   @relation(fields: [userId], references: [id])
+  id           Int      @id @default(autoincrement())
+  category     String
+  payment_to   String   @unique
+  amount       Int
+  userId       String
+  payment_date DateTime @default(now()) @db.Date
+  user         User     @relation(fields: [userId], references: [id])
 }
 
 model Budget {
-  id          Int    @id @default(autoincrement())
-  category    String @unique
-  curr_money  Int
+  id          Int      @id @default(autoincrement())
+  category    String   @unique
   total_money Int
+  saving      Saving[]
+}
+
+model Saving {
+  id       Int     @id @default(autoincrement())
+  date     String
+  amount   Int
+  userId   String
+  budgetId Int?
+  budget   Budget? @relation(fields: [budgetId], references: [id])
+  user     User    @relation(fields: [userId], references: [id])
+}
+
+model Graph {
+  id      Int    @id @default(autoincrement())
+  label   String @unique
+  savings Int
+  expend  Int
 }

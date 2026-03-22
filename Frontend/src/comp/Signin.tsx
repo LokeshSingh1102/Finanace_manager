@@ -8,7 +8,7 @@ function Signin() {
     // const p = "12345678"
     const handleSubmit = async () => {
         try {
-            const res = await axios.post('http://127.0.0.1:8787/signin', {
+            const res = await axios.post('http://127.0.0.1:8787/user/signin', {
                 username: username,
                 password: password
             },
