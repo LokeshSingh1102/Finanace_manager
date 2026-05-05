@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
-import Home from './comp/Home'
+import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 import Signin from './pages/Signin'
+import Grarph from './pages/Grarph'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path='/setting' element={<Profile />} ></Route>
           <Route path='/signup' element={<Signup />} ></Route>
           <Route path='/signin' element={<Signin />} ></Route>
+          <Route path='/graph' element={<Grarph />} ></Route>
         </Routes>
       </BrowserRouter>
     </>

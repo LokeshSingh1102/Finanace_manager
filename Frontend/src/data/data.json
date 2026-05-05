@@ -1,17 +1,17 @@
 [
     {
         "label": "Jun",
-        "savings": 200,
-        "expend": 50
+        "savings": 0,
+        "expend": 0
     },
     {
         "label": "Jul",
-        "savings": 300,
-        "expend": 100
+        "savings": 0,
+        "expend": 0
     },
     {
         "label": "Aug",
-        "savings": 500,
-        "expend": 200
+        "savings": 0,
+        "expend": 0
     }
 ]

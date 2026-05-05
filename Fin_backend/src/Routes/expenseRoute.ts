@@ -52,7 +52,7 @@ expenseRoute.post('/store/:id',async (c)=>{
     // console.log("after creation",allExpense);
     return c.json({message:'expense stored sucessfully'})
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     
     return c.json({message:'could not save the expense',error:error},401)
   }
@@ -81,7 +81,7 @@ expenseRoute.get('/deleteAllExpense',async (c)=>{
   try {
     
     const allExpense = await prisma.expense.deleteMany()
-    console.log(allExpense);
+    // console.log(allExpense);
     
     return c.json({message:"all records are deleted from expense table"})
   } catch (error) {

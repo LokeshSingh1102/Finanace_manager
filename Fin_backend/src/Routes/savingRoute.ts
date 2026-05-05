@@ -36,7 +36,7 @@ savingRoute.post('/save', async (c) => {
                 amount:true
             }
         })
-        console.log(expense._sum.amount);
+        // console.log(expense._sum.amount);
         
 
         const savingId = await prisma.budget.update({
@@ -55,7 +55,7 @@ savingRoute.post('/save', async (c) => {
         })
         return c.json('data saved successfully')
     } catch (error) {
-        console.log(error);
+        // console.log(error);
 
         return c.json('data did not saved', 401)
     }
@@ -79,7 +79,7 @@ savingRoute.post('/budget', async (c) => {
         })
         return c.json('data saved successfully')
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return c.json('data did not saved', 401)
     }
 })

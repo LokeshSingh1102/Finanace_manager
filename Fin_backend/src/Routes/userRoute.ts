@@ -52,7 +52,7 @@ userRoute.post('/signin', async (c) => {
     return c.json({ token: token })
 
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     
     return c.json(error, 403)
   }
