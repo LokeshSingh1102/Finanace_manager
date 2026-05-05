@@ -63,12 +63,12 @@ expenseRoute.get('/allexpense/:id',async (c)=>{
   const category = c.req.param('id')
 
   try {
-    console.log(category);
+    // console.log(category);
     
     const allExpense = await prisma.expense.findMany({
       where:{category:category.substring(1,category.length)}
     })
-    console.log(allExpense);
+    // console.log(allExpense);
     
     return c.json({data:allExpense})
   } catch (error) {

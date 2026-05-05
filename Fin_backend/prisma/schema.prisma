@@ -12,6 +12,7 @@ model User {
   name     String
   username String    @unique
   password String
+  salary   Int       @default(1)
   expense  Expense[]
   savings  Saving[]
 }

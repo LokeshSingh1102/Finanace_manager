@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
 import Home from './comp/Home'
-import Profile from './comp/Profile'
-import Signup from './comp/Signup'
-import Signin from './comp/Signin'
+import Profile from './pages/Profile'
+import Signup from './pages/Signup'
+import Signin from './pages/Signin'
 
 function App() {
 

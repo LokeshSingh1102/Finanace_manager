@@ -7,6 +7,8 @@ import { createMiddleware } from 'hono/factory'
 import { userRoute } from './Routes/userRoute'
 import { expenseRoute } from './Routes/expenseRoute'
 import { savingRoute } from './Routes/savingRoute'
+import {serve} from '@hono/node-server'
+
 
 const app = new Hono<{
   Bindings: {
@@ -34,7 +36,7 @@ const authenticateUser = createMiddleware(async (c, next) => {
 app.use('/*', cors())
 
 app.get('/', (c) => {
-  console.log("hello", c.env.JWT_SECRET);
+  // console.log("hello", c.env.JWT_SECRET);
   return c.text('Hello Hono!')
 })
 
@@ -46,4 +48,8 @@ app.route('/saving',savingRoute)
 
 
 
-export default app
+// export default app
+export default{
+  fetch:app.fetch,
+  port:8087
+}
