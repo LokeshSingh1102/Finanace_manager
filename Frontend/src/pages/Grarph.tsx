@@ -14,12 +14,10 @@ interface expense {
 }
 
 function Grarph() {
-//   const [expend, setExpend] = useState<expense[]>([]);
   const [check, setCheck] = useState(0);
   const [category, setCategory] = useState("");
 
-  // let expendData: expense[]=[]
-  // let ttl = 0
+
   useEffect(() => {
     let dummy: expense[] = [];
     setCheck((prev) => prev * 0);
@@ -30,10 +28,7 @@ function Grarph() {
         },
       })
       .then((res) => {
-        // console.log("data", res.data.data);
-        // dummy = res.data.data;
-        // // setExpend(dummy)
-        // console.log(dummy);
+        dummy = res.data.data;
 
         dummy.map((e) => {
           setCheck((prev) => prev + e.amount);

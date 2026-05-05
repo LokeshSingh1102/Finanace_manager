@@ -1,6 +1,4 @@
 import { Link } from "react-router"
-import Grarph from '../pages/Grarph'
-
 
 function Header() {
     return (
